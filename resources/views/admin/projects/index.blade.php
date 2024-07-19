@@ -100,7 +100,7 @@
         </nav>
 
         <main class="">
-            @yield('content')
+            main project
         </main>
     </div>
 </body>
