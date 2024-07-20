@@ -45,7 +45,10 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        //
+        // cerco il primo elemento per slug
+
+        // dd($slug);
+        return view('admin.projects.show', compact('project'));
     }
 
     /**

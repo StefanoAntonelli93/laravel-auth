@@ -23,15 +23,19 @@
                 @foreach ($projects as $project)
                     <tr>
                         <th scope="row">{{ $project->id }}</th>
-                        <td> <a href="">
-                                <div>{{ $project->name }}</div>
-                            </a></td>
+                        <td>
+                            <div>{{ $project->name }}</div>
+                        </td>
                         <td>
                             <div>{{ $project->status }}</div>
                         </td>
                         <td>
-                            <button class="btn btn-primary btn-sm">modifica</button>
-                            <button class="btn btn-secondary btn-sm">cancella</button>
+                            <a href="{{ route('admin.projects.show', $project->id) }}"><button
+                                    class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i></button></a>
+                            <a href=""><button class="btn btn-success btn-sm"><i
+                                        class="fa-solid fa-gear"></i></button></a>
+                            <a href=""><button class="btn btn-danger btn-sm"><i
+                                        class="fa-solid fa-trash-can"></i></button></a>
                         </td>
                     </tr>
                 @endforeach

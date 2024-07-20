@@ -30,8 +30,8 @@ class ProjectSeeder extends Seeder
             // importo model
             $project = new Project();
             // creo instanze con faker
-            $project->name = $faker->sentence(4);
-            $project->slug = Str::of($project->title)->slug();
+            $project->name = $faker->sentence(2);
+            $project->slug = Str::of($project->name)->slug();
             $project->description = $faker->text();
             $project->project_start_date = $faker->date();
             $project->project_end_date = $faker->date();
