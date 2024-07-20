@@ -27,6 +27,7 @@ return new class extends Migration
 -aggironato il
  */
             $table->string('name', 50)->unique();
+            $table->string('slug', 70)->nullable();
             $table->text('description')->nullable();
             $table->date('project_start_date')->nullable();
             $table->date('project_end_date')->nullable();
