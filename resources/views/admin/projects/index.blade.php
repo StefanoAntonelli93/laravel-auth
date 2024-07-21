@@ -32,9 +32,9 @@
                         </td>
                         <td>
                             {{-- vai a show --}}
-                            <a href="{{ route('admin.projects.show', $project->id) }}"><button
-                                    class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i></button></a>
-                            <a href=""><button class="btn btn-success btn-sm"><i
+                            <a href="{{ route('admin.projects.show', $project) }}"><button class="btn btn-primary btn-sm"><i
+                                        class="fa-solid fa-eye"></i></button></a>
+                            <a href="{{ route('admin.projects.edit', $project) }}"><button class="btn btn-success btn-sm"><i
                                         class="fa-solid fa-gear"></i></button></a>
                             <a href=""><button class="btn btn-danger btn-sm"><i
                                         class="fa-solid fa-trash-can"></i></button></a>

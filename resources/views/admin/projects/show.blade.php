@@ -9,12 +9,22 @@
                     progetti</button></a>
         </div>
 
+
+        {{-- message creazione nuovo progetto --}}
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+
+
+
         @if ($project)
             <p>Nome: {{ $project->name }}</p>
-            <p>Deata inizio progetto: {{ $project->project_start_date }}</p>
+            <p>Data inizio progetto: {{ $project->project_start_date }}</p>
             <p>Data fine progetto: {{ $project->project_end_date }}</p>
-            <p>Stato progetto: {{ $project->status }}</p>
-            <p>Budgeto: {{ $project->budget }}</p>
+            <p>Status: {{ ucfirst($project->status) }}</p>
+            <p>Budget: {{ $project->budget }}</p>
             <p>Project Manager: {{ $project->project_manager }}</p>
             <p>Cliente: {{ $project->customer }}</p>
             <p>Descrizione: {{ $project->description }}</p>

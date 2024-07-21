@@ -23,7 +23,7 @@ class StoreProjectRequest extends FormRequest
     {
         return [
             // posso usare anche array per le validazioni
-            'title' => 'required|string|unique:projects|min:5|max:70',
+            'name' => 'required|string|unique:projects|min:5|max:70',
             'description' => 'string|min:5|max:255',
         ];
     }

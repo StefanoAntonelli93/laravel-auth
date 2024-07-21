@@ -37,7 +37,17 @@ class ProjectController extends Controller
      */
     public function store(StoreProjectRequest $request)
     {
-        //
+
+        $data = $request->validated();
+        $data = $request->all();
+        // dd($data);
+        $project = new Project();
+        $project->name = $data['name'];
+        $project->description = $data['description'];
+        $project->status = $data['status'];
+        $project->save();
+        // reindirizzo a show
+        return redirect()->route('admin.projects.show', $project)->with('message', 'Nuovo progetto creato:' . " " . "$project->name");
     }
 
     /**
@@ -56,6 +66,7 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
@@ -63,7 +74,11 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $data = $request->validated();
+
+        $project->update($data);
+
+        return redirect()->route('admin.projects.show', $project)->with('message', "$project->name" . " " .  'modificato con successo');
     }
 
     /**
