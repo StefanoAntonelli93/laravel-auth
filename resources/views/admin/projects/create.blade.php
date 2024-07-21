@@ -25,7 +25,7 @@
             {{-- form check --}}
             <div class="py-3 d-flex gap-3">
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="status" id="status_in_corso" value="in_corso">
+                    <input class="form-check-input" type="radio" name="status" id="status_in_corso" value="in corso">
                     <label class="form-check-label" for="status_in_corso">
                         In corso
                     </label>
@@ -37,7 +37,7 @@
                     </label>
                 </div>
                 <div class="form-check">
-                    <input class="form-check-input" type="radio" name="status" id="status_in_attesa" value="in_attesa"
+                    <input class="form-check-input" type="radio" name="status" id="status_in_attesa" value="in attesa"
                         checked>
                     <label class="form-check-label" for="status_in_attesa">
                         In attesa

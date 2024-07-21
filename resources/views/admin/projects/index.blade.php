@@ -10,6 +10,17 @@
                 </div>
             </div>
         </div>
+
+
+
+        {{-- message creazione nuovo progetto --}}
+        @if (session('message'))
+            <div class="alert alert-success">
+                {{ session('message') }}
+            </div>
+        @endif
+
+
         {{-- table projects --}}
         <table class="table">
             <thead>
@@ -17,7 +28,7 @@
                     <th scope="col">#</th>
                     <th scope="col">Project name</th>
                     <th scope="col">Status</th>
-                    <th scope="col">Settings</th>
+                    <th scope="col" class="text-end">Settings</th>
                 </tr>
             </thead>
             <tbody>
@@ -30,14 +41,24 @@
                         <td>
                             <div>{{ $project->status }}</div>
                         </td>
-                        <td>
+                        <td class="d-flex gap-2 justify-content-end">
+                            {{-- INFO --}}
                             {{-- vai a show --}}
                             <a href="{{ route('admin.projects.show', $project) }}"><button class="btn btn-primary btn-sm"><i
                                         class="fa-solid fa-eye"></i></button></a>
+
+                            {{-- MODIFICA --}}
+                            {{-- vai a edit --}}
                             <a href="{{ route('admin.projects.edit', $project) }}"><button class="btn btn-success btn-sm"><i
                                         class="fa-solid fa-gear"></i></button></a>
-                            <a href=""><button class="btn btn-danger btn-sm"><i
-                                        class="fa-solid fa-trash-can"></i></button></a>
+                            {{-- CANCELLA --}}
+                            {{-- vai a destoy --}}
+                            <form action="{{ route('admin.projects.destroy', $project) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button class="btn btn-danger btn-sm"><i class="fa-solid fa-trash-can"></i></button>
+                            </form>
+
                         </td>
                     </tr>
                 @endforeach

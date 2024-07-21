@@ -10,15 +10,6 @@
         </div>
 
 
-        {{-- message creazione nuovo progetto --}}
-        @if (session('message'))
-            <div class="alert alert-success">
-                {{ session('message') }}
-            </div>
-        @endif
-
-
-
         @if ($project)
             <p>Nome: {{ $project->name }}</p>
             <p>Data inizio progetto: {{ $project->project_start_date }}</p>
