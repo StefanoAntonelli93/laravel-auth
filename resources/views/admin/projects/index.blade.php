@@ -3,9 +3,10 @@
     <div class="container py-4">
         <div class="content">
             <div class="header-content d-flex justify-content-between align-items-center">
-                <h1 class="py-3">Projects List</h1>
+                <h2 class="py-3">Projects List</h2>
                 <div>
-                    <button class="btn btn-primary">Crea nuovo</button>
+                    {{-- vai a create --}}
+                    <a href="{{ route('admin.projects.create') }}"><button class="btn btn-primary">Crea nuovo</button></a>
                 </div>
             </div>
         </div>
@@ -30,6 +31,7 @@
                             <div>{{ $project->status }}</div>
                         </td>
                         <td>
+                            {{-- vai a show --}}
                             <a href="{{ route('admin.projects.show', $project->id) }}"><button
                                     class="btn btn-primary btn-sm"><i class="fa-solid fa-eye"></i></button></a>
                             <a href=""><button class="btn btn-success btn-sm"><i

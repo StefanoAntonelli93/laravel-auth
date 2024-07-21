@@ -4,6 +4,7 @@
     <div class="container py-5">
         <div class="content d-flex justify-content-between align-items-center">
             <h2 class="py-3">Dettagli del Progetto</h2>
+            {{-- vai a index --}}
             <a href="{{ route('admin.projects.index') }}"><button class="btn btn-primary btn-sm">Torna ai
                     progetti</button></a>
         </div>

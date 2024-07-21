@@ -11,7 +11,7 @@ class StoreProjectRequest extends FormRequest
      */
     public function authorize(): bool
     {
-        return false;
+        return true;
     }
 
     /**
@@ -22,7 +22,16 @@ class StoreProjectRequest extends FormRequest
     public function rules(): array
     {
         return [
-            //
+            // posso usare anche array per le validazioni
+            'title' => 'required|string|unique:projects|min:5|max:70',
+            'description' => 'string|min:5|max:255',
         ];
     }
+    // public function messages()
+    // {
+    //     return [
+    //         'title.required' => 'Il nome è obbligatorio',
+    //         'title.min' => 'Minimo 5 caratteri',
+    //     ];
+    // }
 }
