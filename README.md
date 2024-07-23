@@ -8,7 +8,8 @@ Descrizione:
 Ripercorriamo gli steps fatti a lezione ed iniziamo un nuovo progetto usando laravel breeze per utilizzare il sistema di autenticazione.
 Trovate sulla mia repo github il progetto con tutte le indicazioni per creare un vostro template, partendo da un progetto laravel 10 pulito:
 Seguite le istruzioni del README:
-https://github.com/taniot/laravel-auth-classe126Iniziamo con il definire il layout, modello, migrazione, controller e rotte necessarie per il sistema portfolio:
+https://github.com/taniot/laravel-auth-classe126
+Iniziamo con il definire il layout, modello, migrazione, controller e rotte necessarie per il sistema portfolio:
 
 1. Autenticazione: si parte con l'autenticazione e la creazione di un layout per back-office [x] (view\admin)
 2. Creazione del modello Project con relativa migrazione, seeder, controller e rotte [x] (php artisan make:model -help(cmsrR))
@@ -16,6 +17,8 @@ https://github.com/taniot/laravel-auth-classe126Iniziamo con il definire il layo
 _Bonus_
 Per la parte di back-office creiamo un resource controller Admin\ProjectController per gestire tutte le operazioni CRUD dei progetti [x]
 Implementiamo la validazione dei dati dei Progetti nelle operazioni CRUD che lo richiedono usando due form requests.
+
+---
 
 # Laravel Auth Template
 
