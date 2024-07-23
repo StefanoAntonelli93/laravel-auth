@@ -21,9 +21,16 @@
                 <label for="description" class="form-label">Descrizione</label>
                 <textarea rows="4" type="text" class="form-control" id="description" name="description"></textarea>
             </div>
+            {{-- file imput --}}
+            <div class="mb-3 py-4">
+                <label for="cover_image" class="form-label">Inserisci l'immagine di copertina</label>
+                <input class="form-control" type="file" id="cover_image" name="cover_image">
+            </div>
+
 
             {{-- form check --}}
             <div class="py-3 d-flex gap-3">
+                <div>Stato Progetto</div>
                 <div class="form-check">
                     <input class="form-check-input" type="radio" name="status" id="status_in_corso" value="in corso">
                     <label class="form-check-label" for="status_in_corso">
@@ -51,7 +58,7 @@
                 </div>
             </div>
 
-            <button type="submit" class="btn btn-primary">Crea progetto </button>
+            <button type="submit" class="btn btn-primary mt-3">Crea progetto </button>
         </form>
     </div>
 @endsection
