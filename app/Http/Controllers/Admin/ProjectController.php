@@ -97,7 +97,7 @@ class ProjectController extends Controller
     {
         // se progetto ha immagine la cancello
         if ($project->cover_image) {
-            Storage::delete($project->cpver_image);
+            Storage::delete($project->cover_image);
         }
         // cancello progetto
         $project->delete();
