@@ -11,6 +11,11 @@
 
 
         @if ($project)
+            @if ($project->cover_image)
+                <div>
+                    <img class="w-50" src="{{ asset('storage/' . $project->cover_image) }}" alt="{{ $project->name }}">
+                </div>
+            @endif
             <p>Nome: {{ $project->name }}</p>
             <p>Data inizio progetto: {{ $project->project_start_date }}</p>
             <p>Data fine progetto: {{ $project->project_end_date }}</p>

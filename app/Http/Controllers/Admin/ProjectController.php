@@ -7,6 +7,7 @@ use App\Models\Project;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -38,13 +39,21 @@ class ProjectController extends Controller
     public function store(StoreProjectRequest $request)
     {
 
+        // dd($request->all());
         $data = $request->validated();
         $data = $request->all();
         // dd($data);
+
+        // cover_image
+        $img_path = Storage::put('uploads', $data['cover_image']);
+
+
         $project = new Project();
         $project->name = $data['name'];
         $project->description = $data['description'];
         $project->status = $data['status'];
+        $project->cover_image = $img_path;
+
         $project->save();
         // reindirizzo a show
         return redirect()->route('admin.projects.index', $project)->with('message', 'Nuovo progetto creato:' . " " . "$project->name");
@@ -86,6 +95,11 @@ class ProjectController extends Controller
      */
     public function destroy(Project $project)
     {
+        // se progetto ha immagine la cancello
+        if ($project->cover_image) {
+            Storage::delete($project->cpver_image);
+        }
+        // cancello progetto
         $project->delete();
         return redirect()->route('admin.projects.index', compact('project'))->with('message', "$project->name" . " " .  'eliminato con successo');
     }
