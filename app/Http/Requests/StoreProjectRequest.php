@@ -25,6 +25,7 @@ class StoreProjectRequest extends FormRequest
             // posso usare anche array per le validazioni
             'name' => 'required|string|unique:projects|min:5|max:70',
             'description' => 'string|min:5|max:255',
+            'cover_image' => 'nullable|image|max:2048',
         ];
     }
     // public function messages()
